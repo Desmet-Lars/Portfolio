@@ -113,8 +113,8 @@ const Header = () => {
             <ToggleButton onClick={toggleNavbar}>☰</ToggleButton>
             <NavList isopen={isopen}>
                 <NavItem isopen={isopen}><StyledLink href="#home">Home</StyledLink></NavItem>
-                <NavItem isopen={isopen}><StyledLink href="#projects">Projects</StyledLink></NavItem>
                 <NavItem isopen={isopen}><StyledLink href="#about-me">About me</StyledLink></NavItem>
+                <NavItem isopen={isopen}><StyledLink href="#projects">Projects</StyledLink></NavItem>
                 <NavItem isopen={isopen}><StyledLink href="#contact">Contact</StyledLink></NavItem>
             </NavList>
         </HeaderStyle>
