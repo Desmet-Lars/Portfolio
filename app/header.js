@@ -40,14 +40,14 @@ export const NavList = styled.ul`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         align-items: center;
-        display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+        display: ${({ isopen }) => (isopen ? 'flex' : 'none')};
         width: 100%;
         animation: ${slideAnimation} 0.5s ease-in-out forwards;
     }
 `;
 
 export const NavItem = styled.li`
-    margin: ${({ isOpen }) => (isOpen ? '10px 0' : '0 15px')};
+    margin: ${({ isopen }) => (isopen ? '10px 0' : '0 15px')};
     position: relative;
 `;
 
@@ -102,20 +102,20 @@ const ToggleButton = styled.button`
 `;
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isopen, setIsOpen] = useState(false);
 
     const toggleNavbar = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(!isopen);
     };
 
     return (
-        <HeaderStyle isOpen={isOpen}>
+        <HeaderStyle isopen={isopen}>
             <ToggleButton onClick={toggleNavbar}>☰</ToggleButton>
-            <NavList isOpen={isOpen}>
-                <NavItem isOpen={isOpen}><StyledLink href="#home">Home</StyledLink></NavItem>
-                <NavItem isOpen={isOpen}><StyledLink href="#projects">Projects</StyledLink></NavItem>
-                <NavItem isOpen={isOpen}><StyledLink href="#about-me">About me</StyledLink></NavItem>
-                <NavItem isOpen={isOpen}><StyledLink href="#contact">Contact</StyledLink></NavItem>
+            <NavList isopen={isopen}>
+                <NavItem isopen={isopen}><StyledLink href="#home">Home</StyledLink></NavItem>
+                <NavItem isopen={isopen}><StyledLink href="#projects">Projects</StyledLink></NavItem>
+                <NavItem isopen={isopen}><StyledLink href="#about-me">About me</StyledLink></NavItem>
+                <NavItem isopen={isopen}><StyledLink href="#contact">Contact</StyledLink></NavItem>
             </NavList>
         </HeaderStyle>
     );

@@ -14,6 +14,7 @@ import Header from './header'
 
 export default function Home() {
     return (
+
         <div>
             <Header/>
             <Main id="home">
@@ -31,19 +32,19 @@ export default function Home() {
                     <SubTitle>Programming skills</SubTitle>
                     <ProgramCards>
                         <ProgramCard>
-                            <img src="https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw" alt="React"/>
+                            <img src="/react_logo.png" alt="React"/>
                             <h2>React</h2>
                         </ProgramCard>
                         <ProgramCard>
-                            <img src="https://imgs.search.brave.com/J8FUkJ_yGZYVMdOfDg521emcJp77_7u_uvmEw5pTfLU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jbG91/ZC5naXRodWJ1c2Vy/Y29udGVudC5jb20v/YXNzZXRzLzk5NzYy/MC8xMDYyNTAyNy80/N2IwYWI4YS03Nzdk/LTExZTUtODQ3Ni1h/ZTAxNDhkNDRjNDYu/cG5n" alt="Node.js"/>
+                            <img src="/nodejs_logo.png" alt="Node.js"/>
                             <h2>Node.js</h2>
                         </ProgramCard>
                         <ProgramCard>
-                            <img src="https://imgs.search.brave.com/rU-xKCJwWtJq29sf-C9iG8Bt92d_FwQKH_y5HTlseBs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL25leHRq/czc2ODUubG9nb3dp/ay5jb20ud2VicA" alt="Next.js"/>
+                            <img src="/nextjs_logo.png" alt="Next.js"/>
                             <h2>Next.js</h2>
                         </ProgramCard>
                         <ProgramCard>
-                            <img src="https://imgs.search.brave.com/UtLy-XdeBFloVtqXskK5ZyUdYcW8svd4_ijGW8fapz0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/bGlibG9nby5jb20v/aW1nLWxvZ28vcGg0/MjRwYTQ4LXBocC1s/b2dvLXBocC1wbGFp/bi1sb2dvLWZyZWUt/aWNvbi1vZi1kZXZp/Y29uLnBuZw" alt="PHP"/>
+                            <img src="/php_logo.png" alt="PHP"/>
                             <h2>PHP</h2>
                         </ProgramCard>
                     </ProgramCards>
