@@ -1,6 +1,17 @@
 import { useState } from 'react';
-import styled from "styled-components";
-import Link from "next/link"; // Import useState hook
+import styled, { keyframes } from "styled-components";
+import Link from "next/link";
+
+const slideAnimation = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
 
 export const HeaderStyle = styled.header`
     background-color: transparent;
@@ -10,10 +21,12 @@ export const HeaderStyle = styled.header`
     width: 100%;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* Ensure the header appears above the main content */
+    z-index: 1;
 
     @media screen and (max-width: 768px) {
         padding: 10px;
+        background-color: rgba(231, 231, 231, 0.85);
+        transition: background-color 0.5s ease;
     }
 `;
 
@@ -27,86 +40,82 @@ export const NavList = styled.ul`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         align-items: center;
-        display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')}; /* Toggle visibility */
-        width: 100%; /* Make the navlist take up full width when open */
+        display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+        width: 100%;
+        animation: ${slideAnimation} 0.5s ease-in-out forwards;
     }
 `;
 
 export const NavItem = styled.li`
-    margin: 0 15px;
-    position: relative; /* Make the parent element for the ::after pseudo-element */
-
-    @media screen and (max-width: 768px) {
-        margin: 10px 0;
-    }
+    margin: ${({ isOpen }) => (isOpen ? '10px 0' : '0 15px')};
+    position: relative;
 `;
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
-    color: black; /* White color for links */
+    color: black;
     font-weight: bold;
-    position: relative; /* Ensure that ::after is relative to this element */
+    position: relative;
     transition: color 0.3s;
 
     &:hover {
-        color: #d2d2d2; /* Olive Drab */
+        color: #d2d2d2;
     }
 
     &::after {
         content: '';
         position: absolute;
-        bottom: -5px; /* Position the underline below the text */
+        bottom: -5px;
         left: 0;
-        width: 100%; /* Extend the underline across the entire width */
-        height: 2px; /* Height of the underline */
-        background-color: #d2d2d2; /* Olive Drab */
-        transition: width 0.3s, left 0.3s; /* Add transition effect */
-        transform: scaleX(0); /* Initially, set the width to zero */
-        transform-origin: center; /* Set the origin of the transform */
+        width: 100%;
+        height: 2px;
+        background-color: #d2d2d2;
+        transition: width 0.3s, left 0.3s;
+        transform: scaleX(0);
+        transform-origin: center;
     }
 
     &:hover::after {
-        transform: scaleX(1); /* Expand the width of the underline on hover */
+        transform: scaleX(1);
     }
 
     @media screen and (max-width: 768px) {
         font-size: 18px;
+        color: black;
     }
 `;
 
-// Button component to toggle navbar visibility
 const ToggleButton = styled.button`
     background: none;
     border: none;
     cursor: pointer;
-    display: none; /* Hide the button by default for larger screens */
+    display: none;
+
     @media screen and (max-width: 768px) {
-        display: block; /* Show the button for smaller screens */
+        display: block;
         top: 10px;
         right: 20px;
-        color: black;
+        color: white;
         font-size: 20px;
         z-index: 2;
     }
 `;
 
-// Header component
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false); // State to track whether the navbar is open or closed
+    const [isOpen, setIsOpen] = useState(false);
 
-    // Function to toggle navbar visibility
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
     };
 
     return (
-        <HeaderStyle>
-            <ToggleButton onClick={toggleNavbar}>☰</ToggleButton> {/* Button to toggle navbar */}
+        <HeaderStyle isOpen={isOpen}>
+            <ToggleButton onClick={toggleNavbar}>☰</ToggleButton>
             <NavList isOpen={isOpen}>
-                <NavItem><StyledLink href="#home">Home</StyledLink></NavItem>
-                <NavItem><StyledLink href="#projects">Projects</StyledLink></NavItem>
-                <NavItem><StyledLink href="#about-me">About me</StyledLink></NavItem>
-                <NavItem><StyledLink href="#contact">Contact</StyledLink></NavItem>
+                <NavItem isOpen={isOpen}><StyledLink href="#home">Home</StyledLink></NavItem>
+                <NavItem isOpen={isOpen}><StyledLink href="#projects">Projects</StyledLink></NavItem>
+                <NavItem isOpen={isOpen}><StyledLink href="#about-me">About me</StyledLink></NavItem>
+                <NavItem isOpen={isOpen}><StyledLink href="#contact">Contact</StyledLink></NavItem>
             </NavList>
         </HeaderStyle>
     );
