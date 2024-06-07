@@ -1,113 +1,101 @@
-import Image from "next/image";
+'use client'
+import styled from 'styled-components';
+import Link from 'next/link';
+import Image from 'next/image';
+import {
+    Main,
+    AboutMe,
+    Info,
+    SubTitle,
+    ProgramCards,
+    ProgramCard, HR, Projects, ProjectCardsContainer, ProjectCard, Contact
+} from "@/app/style";
+import Header from './header'
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    return (
+        <div>
+            <Header/>
+            <Main id="home">
+                <section>
+                    Lars Desmet
+                </section>
+            </Main>
+            <Info>
+                <AboutMe id="about-me">
+                    <h1>About</h1>
+                    <SubTitle style={{marginTop:'10px'}}>Me</SubTitle>
+                    <p>hello, I am an enthusiastic person who can learn quickly.</p>
+                    <p>I am currently studying Industrial ICT at Don Bosco Sint-Denijs-Westrem,</p>
+                    <p>after which I will continue my studies at Odisee with a specialization in Web/app development.</p>
+                    <SubTitle>Programming skills</SubTitle>
+                    <ProgramCards>
+                        <ProgramCard>
+                            <img src="https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw" alt="React"/>
+                            <h2>React</h2>
+                        </ProgramCard>
+                        <ProgramCard>
+                            <img src="https://imgs.search.brave.com/J8FUkJ_yGZYVMdOfDg521emcJp77_7u_uvmEw5pTfLU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jbG91/ZC5naXRodWJ1c2Vy/Y29udGVudC5jb20v/YXNzZXRzLzk5NzYy/MC8xMDYyNTAyNy80/N2IwYWI4YS03Nzdk/LTExZTUtODQ3Ni1h/ZTAxNDhkNDRjNDYu/cG5n" alt="Node.js"/>
+                            <h2>Node.js</h2>
+                        </ProgramCard>
+                        <ProgramCard>
+                            <img src="https://imgs.search.brave.com/rU-xKCJwWtJq29sf-C9iG8Bt92d_FwQKH_y5HTlseBs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL25leHRq/czc2ODUubG9nb3dp/ay5jb20ud2VicA" alt="Next.js"/>
+                            <h2>Next.js</h2>
+                        </ProgramCard>
+                        <ProgramCard>
+                            <img src="https://imgs.search.brave.com/UtLy-XdeBFloVtqXskK5ZyUdYcW8svd4_ijGW8fapz0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/bGlibG9nby5jb20v/aW1nLWxvZ28vcGg0/MjRwYTQ4LXBocC1s/b2dvLXBocC1wbGFp/bi1sb2dvLWZyZWUt/aWNvbi1vZi1kZXZp/Y29uLnBuZw" alt="PHP"/>
+                            <h2>PHP</h2>
+                        </ProgramCard>
+                    </ProgramCards>
+
+                    <SubTitle>Internship</SubTitle>
+                    <p></p>
+                    <img src="https://www.deniba.at/home/img/logo400p.png" style={{width:'300px'}} alt="Deniba"/>
+                    <p>I did an internship at Deniba Software in Austria where I learned the Angular framework with mongoDB.</p>
+                    <p>This internship was made possible by the Erasmus+ programme.</p>
+
+
+                </AboutMe>
+                <HR/>
+                <Projects id="projects">
+                    <h1>Projects</h1>
+                    <ProjectCardsContainer>
+                        <ProjectCard>
+                            <img src="/lars-desmet-high-resolution-logo-black-transparent.png" alt="Project X"/>
+                            <h2>Portfolio</h2>
+                            <p>This is the website you are currently in.</p>
+                            <a href="#">Learn more</a>
+                        </ProjectCard>
+                        <ProjectCard>
+                            <img src="/sm_logo.jpg" alt="smartschool"/>
+                            <h2>SmartschoolApplication</h2>
+                            <p>A end project for the school Don Bosco Sint-Denijs-Westrem Ghent</p>
+                            <a href="#">Learn more</a>
+                        </ProjectCard>
+                        <ProjectCard>
+                            <img src="/web-chat-high-resolution-logo-black-transparent.png" alt="Project Z"/>
+                            <h2>Web Chat</h2>
+                            <p>A 1 group chat for with friends (currently down)</p>
+                            <a href="#">Learn more</a>
+                        </ProjectCard>
+                        <ProjectCard>
+                            <img src="/spotyfree-high-resolution-logo-black-transparent.png" alt="Project W"/>
+                            <h2>SpotifyFree</h2>
+                                <p>A Flask app that searches your liked Spotify tracks and downloads them from YouTube.</p>
+                            <a href="#">Learn more</a>
+                        </ProjectCard>
+                    </ProjectCardsContainer>
+                </Projects>
+            </Info>
+            <Contact id="contact">
+                <h1>Contact</h1>
+                <form>
+                    <input type="text" placeholder="Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <textarea placeholder="Message" rows={4} required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </Contact>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    );
 }
