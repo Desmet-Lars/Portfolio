@@ -8,9 +8,10 @@ import {
     Info,
     SubTitle,
     ProgramCards,
-    ProgramCard, HR, Projects, ProjectCardsContainer, ProjectCard, Contact
+    ProgramCard, HR, Projects, ProjectCardsContainer, ProjectCard,
 } from "@/app/style";
 import Header from './header'
+import Contact from './contact'
 
 export default function Home() {
     return (
@@ -88,15 +89,7 @@ export default function Home() {
                     </ProjectCardsContainer>
                 </Projects>
             </Info>
-            <Contact id="contact">
-                <h1>Contact</h1>
-                <form>
-                    <input type="text" placeholder="Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <textarea placeholder="Message" rows={4} required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </Contact>
+            <Contact/>
         </div>
     );
 }
